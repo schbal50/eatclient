@@ -38,7 +38,7 @@ export default function Menus() {
             }
             else if (message.msgBody === "UnAuthorized") {
                 setMessage(message);
-                authContext.setUser({ username: "", role: "" })
+                authContext.setUser({ username: "", is_staff: false })
                 authContext.setIsAuthenticated(false);
             }
             else {

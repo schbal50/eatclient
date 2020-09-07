@@ -3,7 +3,7 @@ import AuthService from '../Services/AuthService'
 import Message from '../Components/Message' // Displays the messages that we get from the server.
 
 const Register = props => {
-    const [user, setUser] = useState({ username: "", password: "", role: "" });
+    const [user, setUser] = useState({ username: "", password: "", email: "" });
     const [message, setMessage] = useState(null);
     let timerID = useRef(null);
 
@@ -19,7 +19,7 @@ const Register = props => {
     }
 
     const resetForm = () => {
-        setUser({ username: "", password: "", role: "" })
+        setUser({ username: "", password: "", email: "" })
     }
 
     const onSubmit = e => {
@@ -44,7 +44,7 @@ const Register = props => {
                 <div className="d-flex flex-column bd-highlight mb-3">
                     <input value={user.username} type="text" name="username" onChange={onChange} className="form-contol" placeholder="Enter username" />
                     <input value={user.password} type="password" name="password" onChange={onChange} className="form-contol" placeholder="Enter password" />
-                    <input value={user.role} type="text" name="role" onChange={onChange} className="form-contol" placeholder="Enter role (admin / user)" />
+                    <input value={user.email} type="text" name="email" onChange={onChange} className="form-contol" placeholder="Enter email" />
                 </div>
                 <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button>
             </form>

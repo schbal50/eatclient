@@ -9,7 +9,7 @@ export default {
             }
         }).then(res => {
             if(res.status !== 401) return res.json().then(data => data);
-            else return { isAuthenticated: false, user: {username: "", role: "" }}
+            else return { isAuthenticated: false, user: {username: "", is_staff: false }}
         })
     },
     register: user => {
@@ -36,7 +36,7 @@ export default {
             .then(res => {
                 if (res.status !== 401) // Passport automatikusan küld egy 401-t ha nem vagyunk autholva
                 { return res.json().then(data => data); }
-                else { return { isAuthenticated: false, user: { username: "", role: "" } }; }
+                else { return { isAuthenticated: false, user: { username: "", is_staff: false } }; }
             })
     }
 }

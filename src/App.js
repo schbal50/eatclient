@@ -17,8 +17,8 @@ function App() {
       <Route exact path="/" component={Home} />
       <UnPrivateRoute path="/login" component={Login} />
       <UnPrivateRoute path="/register" component={Register} />
-      <PrivateRoute path="/menus" component={Menus} roles={["user", "admin"]} />
-      <PrivateRoute path="/admin" component={Admin} roles={["admin"]} />
+      <PrivateRoute path="/menus" component={Menus} is_staff={[true, false]} />
+      <PrivateRoute path="/admin" component={Admin} is_staff={[true]} />
       <Route exact path="/publicmenu" component={PublicMenu} />
     </Router>
   );

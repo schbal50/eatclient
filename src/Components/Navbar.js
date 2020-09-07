@@ -53,7 +53,7 @@ const Navbar = props => {
                     </li>
                 </Link>
                 {
-                    user.role === "admin" ?
+                    user.is_staff  ?
                         <Link to="/admin">
                             <li className="nav-item nav-link">
                                 Admin

@@ -4,7 +4,6 @@ import MenuService from '../Services/MenuService';
 import { AuthContext } from '../Context/AuthContext'
 import Message from '../Components/Message'
 import QRCode from 'qrcode.react';
-import { useHistory } from 'react-router-dom'
 // https://github.com/soldair/node-qrcode
 // http://localhost:3000/publicmenu?id=5f4fae1f3cd24d69148068f6
 
@@ -21,8 +20,8 @@ export default function Menus() {
         MenuService.getMenus().then(data => {
             setMenus(data.menu)
         })
-
-        setUrl("http://localhost:3000/publicmenu?id=" + `${authContext.user._id}`)
+        let id = authContext.user._id;
+        setUrl(`http://localhost:3000/publicmenu?id=${id}`)
     }, []);
 
     const onSubmit = (e) => {
@@ -61,13 +60,30 @@ export default function Menus() {
         document.write('<img src="' + img + '"/>');
     }
 
+    function deleteItem(id) {
+         MenuService.deleteMenuItemById(id).then(data => {
+            const { message } = data;
+            if (!message.msgError) {
+                setMenus(data.menu);
+            }
+            else if (message.msgBody === "UnAuthorized") {
+                setMessage(message);
+                authContext.setUser({ username: "", is_staff: false })
+                authContext.setIsAuthenticated(false);
+            }
+            else {
+                setMessage(message); // Ez error message lesz
+            }
+         })
+    }
+
     return (
         <div className="container">
 
             <ul className="list-group">
                 {
                     menu.map(menuI => {
-                        return <MenuItem key={menuI._id} menuItem={menuI} />
+                        return <div key={menuI._id}><MenuItem menuItem={menuI}/> <button onClick={() => {deleteItem(menuI._id)}}>Del</button> </div>
                     })
                 }
             </ul>

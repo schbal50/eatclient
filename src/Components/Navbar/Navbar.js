@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import AuthService from '../Services/AuthService';
-import { AuthContext } from '../Context/AuthContext';
+import AuthService from '../../Services/AuthService';
+import { AuthContext } from '../../Context/AuthContext';
+import './Navbar.css';
 
 
 
@@ -21,17 +22,17 @@ const Navbar = props => {
         return (
             <>
                 <Link to="/">
-                    <li className="nav-item nav-link">
+                    <li>
                         Home
                     </li>
                 </Link>
                 <Link to="/login">
-                    <li className="nav-item nav-link">
+                    <li>
                         Login
                     </li>
                 </Link>
                 <Link to="/register">
-                    <li className="nav-item nav-link">
+                    <li>
                         Register
                     </li>
                 </Link>
@@ -43,21 +44,21 @@ const Navbar = props => {
         return (
             <>
                 <Link to="/">
-                    <li className="nav-item nav-link">
+                    <li>
                         Home
                     </li>
                 </Link>
                 <Link to="/menus">
-                    <li className="nav-item nav-link">
+                    <li>
                         Menu
                     </li>
                 </Link>
                 {
-                    user.is_staff  ?
+                    user.is_staff ?
                         <Link to="/admin">
-                            <li className="nav-item nav-link">
+                            <li>
                                 Admin
-                        </li>
+                            </li>
                         </Link> : null
                 }
                 <button type="button" className="btn btn-link nav-item nav-link" onClick={onClickLogoutHandler}>Logout</button>
@@ -67,12 +68,12 @@ const Navbar = props => {
 
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav>
             <Link to="/">
-                <div className="navbar-brand">EatLap</div>
+                <div className="EatLap">EatLap</div>
             </Link>
-            <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
+            <div id="navbarText">
+                <ul>
                     {!isAuthenticated ? unauthenticatedNavbar() : authenticatedNavbar()}
                 </ul>
             </div>

@@ -1,0 +1,32 @@
+nav {
+    display: flex;
+    flex: 1;
+    height: 40%;
+    width: 100%;
+    background: #F3F0E6;
+    opacity: 0.9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    overflow: hidden;
+  }
+  
+  li {
+    margin-right: 10px;
+    margin-top: 25px;
+}
+
+.EatLap {
+    margin-left: 10px;
+    flex-direction: row;
+    font-family: Post No Bills Colombo;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+
+    color: #717171;
+}

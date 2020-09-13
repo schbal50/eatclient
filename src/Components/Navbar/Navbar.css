@@ -9,6 +9,7 @@ nav {
 }
 
 ul {
+    width: 100%;
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -21,6 +22,7 @@ ul {
 }
 
 .EatLap {
+    margin-top: 7%;
     margin-left: 10px;
     flex-direction: row;
     font-family: Post No Bills Colombo;
@@ -29,4 +31,9 @@ ul {
     font-size: 36px;
 
     color: #717171;
+}
+
+button {
+    margin-left: 250px;
+    margin-top: 16px;
 }

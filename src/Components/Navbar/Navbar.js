@@ -48,6 +48,11 @@ const Navbar = props => {
                         Home
                     </li>
                 </Link>
+                <Link to="/user">
+                    <li>
+                        User
+                    </li>
+                </Link>
                 <Link to="/menus">
                     <li>
                         Menu

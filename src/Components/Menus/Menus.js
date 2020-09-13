@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react'
-import MenuItem from './MenuItem'
-import MenuService from '../Services/MenuService';
-import { AuthContext } from '../Context/AuthContext'
-import Message from '../Components/Message'
+import MenuItem from '../MenuItem'
+import MenuService from '../../Services/MenuService';
+import { AuthContext } from '../../Context/AuthContext'
+import Message from '../Message'
 import QRCode from 'qrcode.react';
 // https://github.com/soldair/node-qrcode
 // http://localhost:3000/publicmenu?id=5f4fae1f3cd24d69148068f6
 
-import './Menus/Menus.css';
+import './Menus.css';
 
 export default function Menus() {
     const [menuItem, setMenu] = useState({ name: "" })

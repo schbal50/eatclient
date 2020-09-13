@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './Components/Home'
 import Login from './Components/Login'
 import Register from './Components/Register'
-import Menus from './Components/Menus'
+import Menus from './Components/Menus/Menus'
+import User from './Components/User/User'
 import Admin from './Components/Admin'
 import PublicMenu from './Components/PublicMenu'
 import PrivateRoute from './hocs/PrivateRoute'
@@ -19,6 +20,7 @@ function App() {
       <UnPrivateRoute path="/register" component={Register} />
       <PrivateRoute path="/menus" component={Menus} is_staff={[true, false]} />
       <PrivateRoute path="/admin" component={Admin} is_staff={[true]} />
+      <PrivateRoute path="/user" component={User} is_staff={[true]} />
       <Route exact path="/publicmenu" component={PublicMenu} />
     </Router>
   );

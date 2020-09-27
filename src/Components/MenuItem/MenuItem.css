@@ -1,0 +1,107 @@
+li {
+    list-style-type: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .note {
+    }
+    
+    .note h1 {
+        margin-bottom: 6px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #717171;
+
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .note p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .note-descripiton {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: rgba(113, 113, 113, 0.6);
+        }
+
+    .note-price {
+        
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: rgba(0, 0, 0, 0.66);
+
+    }
+}
+
+
+.note h1 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #717171;
+}
+
+.note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note-descripiton {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: rgba(113, 113, 113, 0.6);
+    }
+
+.note-price {
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: rgba(0, 0, 0, 0.66);
+
+}

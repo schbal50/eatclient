@@ -20,8 +20,8 @@ export default function Menus() {
         MenuService.getMenus().then(data => {
             setMenus(data.menu)
         })
-        let id = authContext.user._id;
-        setUrl(`http://localhost:3000/publicmenu?id=${id}`)
+        const uid = authContext.user._id;
+        setUrl(`http://localhost:3000/publicmenu?id=${uid}`)
     }, []);
 
     const onSubmit = (e) => {
@@ -78,22 +78,26 @@ export default function Menus() {
     }
 
     return (
-        <div className="container">
+        <div className="menus-container">
 
-            <ul className="list-group">
+            <ul className="list-container">
                 {
                     menu.map(menuI => {
-                        return <div key={menuI._id}><MenuItem menuItem={menuI}/> <button onClick={() => {deleteItem(menuI._id)}}>Del</button> </div>
+                        return <div className="list-menuItem" key={menuI._id}><MenuItem menuItem={menuI}/> <button onClick={() => {deleteItem(menuI._id)}}>Del</button> </div>
                     })
                 }
+                <div className="list-menuItem">
+                <form onSubmit={onSubmit}>
+                    <label htmlFor="menu">Enter menu</label>
+                    <input type="text" name="menu" value={menuItem.name} onChange={onChange} className="form-contol" placeholder="Enter any menu item" />
+                    <button className="btn btn-lg btn-block" type="submit" >Submit</button>
+                </form>
+            </div>
             </ul>
             <br></br>
-            <form onSubmit={onSubmit}>
-                <label htmlFor="menu">Enter menu</label>
-                <input type="text" name="menu" value={menuItem.name} onChange={onChange} className="form-contol" placeholder="Enter any menu item" />
-                <button className="btn btn-lg btn-primary btn-block" type="submit" >Submit</button>
-            </form>
+            <div>
             {message ? <Message message={message} /> : null}
+            </div>
             <div className="container">
                 <a onClick={downloadQR}>
                     <QRCode

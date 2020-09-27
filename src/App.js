@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './Components/Navbar'
+import Navbar from './Components/Navbar/Navbar'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './Components/Home'
 import Login from './Components/Login'
@@ -9,6 +9,7 @@ import Admin from './Components/Admin'
 import PublicMenu from './Components/PublicMenu'
 import PrivateRoute from './hocs/PrivateRoute'
 import UnPrivateRoute from './hocs/UnPrivateRoute'
+import './App.css'
 
 function App() {
   return (

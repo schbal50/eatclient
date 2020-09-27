@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './MenuItem/MenuItem.css'
+
 export default function MenuItem(props) {
 
     function renderIfHasValue(value){
@@ -9,11 +11,11 @@ export default function MenuItem(props) {
     }
 
     return (
-        <div className="card">
-            <li>{props.menuItem.name}</li>
-            {renderIfHasValue(props.menuItem.description)}
-            {renderIfHasValue(props.menuItem.price)}
-            {renderIfHasValue(props.menuItem.categories)}
+        <div className="note">
+            <h1>{props.menuItem.name}</h1>
+            <p className=".note-descripiton">{renderIfHasValue(props.menuItem.description)}</p>
+            <p className="" >{renderIfHasValue(props.menuItem.price)}</p>
+            <p className="" >{renderIfHasValue(props.menuItem.categories)}</p>
         </div>
     )
 }

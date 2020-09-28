@@ -7,16 +7,23 @@ nav {
     font-family: 'Poppins', sans-serif;
 }
 
-.logo {
-    color: gray;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 10%;
+}
+
+.logoImg {
+    width: 7%;
+    height: auto;
 }
 
 .nav-links {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 0px;
+    margin-right: 2%;
     width: 40%;
 }
 
@@ -29,7 +36,7 @@ nav {
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .burger {
@@ -60,6 +67,17 @@ nav {
         background-color: bisque;
         font-family: 'Poppins', sans-serif;
     }
+
+    .logo{
+        margin-left: 7%;
+    }
+
+    .logoImg {
+        width: 20%;
+        max-width: 400px;
+        height: auto;
+    }
+
     .nav-links {
         position: absolute;
         justify-content: flex-start;
@@ -77,16 +95,19 @@ nav {
 
     .nav-active {
         display: none;
+        align-items: center;
     }
 
     .nav-links li {
         opacity: 0;
-        margin: 15%;
+        margin-top: 90%;
+        font-size: larger;
     }
 
     .burger {
         display: block;
         cursor: pointer;
+        margin-right: 7%;
     }
 }
 

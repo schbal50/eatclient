@@ -1,66 +1,227 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.paginator-container {
+  margin-top: 1%;
+  position: relative;
+  display: flex;
+  margin-left: 3%;
+  margin-right: 3%;
+  justify-content: center;
 }
 
-body {
-    background: #F3F0E6;
-    opacity: 0.77;
+.paginator-insideContainer{
+  display: flex;
+  flex: 6;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 15px;
 }
 
-@media only screen and (min-width: 600px) {
-    
-    .list-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .list-menuItem {
-        flex: 3;
-        width: 40%;
-        align-content: flex-start;
-        
-
-        min-width: 40%;
-        max-width: 40%;
-        background: #fff;
-        border-radius: 7px;
-        box-shadow: 0 2px 5px #ccc;
-        padding: 10px;
-        margin: 16px;
-
-        float: left;
-        
-    }
-
-    .list-menuItem button {
-        position: relative;
-        float: left;
-        margin-right: 10px;
-        color: #f5ba13;
-        border: none;
-        width: 0.5rem;
-        height: 5%;
-        cursor: pointer;
-        outline: none;
-        background-color: #fff;
-    }
+.menus-container {
+  position: relative;
 }
 
-.list-container {
-    display: block;
-    width: 100%;
-    justify-content: space-around;
+.menus-list {
+
 }
 
-.list-menuItem {
-    align-self: start;
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    margin: 16px;
-    
+.menus-list li {
+  display: flex;
+  list-style: none;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 46%;
+  margin: 16px;
+  min-height: 175px;
+  float: left;
+}
+
+#addList {
+  display: flex;
+  flex: 2;
+  left: 0vh;
+  position: sticky;
+  justify-self: center;
+  justify-content: center;
+  list-style: none;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 20%;
+  margin: 16px;
+  min-height: 175px;
+  opacity: 60%;
+  border-radius: 50px;
+  min-height: 50px;
+  right: 38%;
+}
+
+#addList button {
+  flex: auto;
+}
+
+.menus-list li .item2 {
+  position: relative;
+  flex: 2;
+  
+  border-radius: 9px;
+  justify-content: center;
+  margin: 6px;
+}
+
+.menus-list li .item1 {
+  flex: 3;
+  position: relative;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  position: absolute;
+  left: 40%;
+  bottom: 0px;
+
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 14px;
+  align-items: center;
+  text-align: center;
+
+  color: rgba(0, 0, 0, 0.66);
+
+}
+
+.description {
+  margin-top: auto;
+  margin-bottom: 35px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 14px;
+
+  color: rgba(113, 113, 113, 0.6);
+}
+
+.name {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 21px;
+
+  color: #717171;
+}
+
+div.icon {
+  display: inline;
+  position: absolute;
+  
+  bottom: 0;
+  left: 0;
+}
+
+.sizedImage {
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media screen and (max-width:900px){
+  .menus-list li {
+      display: flex;
+      list-style: none;
+      background: #fff;
+      border-radius: 7px;
+      box-shadow: 0 2px 5px #ccc;
+      padding: 10px;
+      width: 40%;
+      margin: 16px;
+      min-height: 175px;
+      
+      float: left;
+  }
+}
+
+@media screen and (max-width:768px) {
+  body {
+      padding: 0;
+      margin: 0;
+  }
+
+  .paginator-insideContainer{
+      padding: 0px;
+  }
+
+  .menus-container {
+      padding: 0;
+      margin: 0;
+  }
+  
+  .menus-list {
+      padding: 0;
+      margin: 0;
+  }
+
+  .menus-list li {
+      display: flex;
+      list-style: none;
+      background: #fff;
+      border-radius: 7px;
+      box-shadow: 0 2px 5px #ccc;
+      padding: 10px;
+      width: 90%;
+      min-height: 150px;
+      float: left;
+  }
+
+  #addList {
+      display: flex;
+      left: 0vh;
+      flex: 1;
+      position: sticky;
+      justify-self: center;
+      justify-content: center;
+      list-style: none;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc;
+      padding: 10px;
+      width: 20%;
+      margin: 16px;
+      min-height: 175px;
+      opacity: 60%;
+      border-radius: 50px;
+      min-height: 50px;
+      right: 0%;
+  }
+
+  .menus-list li .item2 {
+      position: relative;
+      flex: 2;
+      
+      border-radius: 9px;
+      margin: 6px;
+  }
+
+  .sizedImage {
+      position: relative;
+      top: 0;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 5px;
+  }
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 
-import './MenuItem/MenuItem.css'
+import './MenuItem.css'
 
 export default function MenuItem(props) {
 
     function renderIfHasValue(value){
         if (value) {
-            return <li>value</li>
+            return <li>{value}</li>
         }
     }
 

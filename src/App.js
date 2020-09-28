@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './Components/Home'
 import Login from './Components/Login'
 import Register from './Components/Register'
-import Menus from './Components/Menus'
+import Menus from './Components/Menus/Menus'
 import Admin from './Components/Admin'
 import PublicMenu from './Components/PublicMenu'
 import PrivateRoute from './hocs/PrivateRoute'

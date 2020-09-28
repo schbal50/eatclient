@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import MenuItem from './MenuItem'
+import MenuItem from './MenuItem/MenuItem'
 import MenuService from '../Services/MenuService';
 import queryString from 'query-string';
 

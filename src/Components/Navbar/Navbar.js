@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../../Services/AuthService';
 import { AuthContext } from '../../Context/AuthContext';
+import leves from '../../pics/leves.jpg';
+import logo from '../../pics/logo.png';
 import './Navbar.css'
 
 
@@ -64,7 +66,7 @@ const Navbar = props => {
             <>
                 <Link to="/">
                     <li>
-                       Home
+                        Home
                     </li>
                 </Link>
                 <Link to="/menus">
@@ -80,7 +82,7 @@ const Navbar = props => {
                             </li>
                         </Link> : null
                 }
-                <Link>
+                <Link to="/login">
                     <li onClick={onClickLogoutHandler}>
                         Logout
                     </li>
@@ -92,11 +94,9 @@ const Navbar = props => {
 
     return (
         <nav>
-            <Link to="/">
-                <div className="logo">
-                    <h4>EatLap</h4>
-                </div>
-            </Link>
+            <div className="logo">
+                <img src={logo} className="logoImg" alt="Responsive image"/>
+            </div>
             <ul className="nav-links nav-active">
                 {!isAuthenticated ? unauthenticatedNavbar() : authenticatedNavbar()}
             </ul>

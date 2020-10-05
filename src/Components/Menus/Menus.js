@@ -51,6 +51,11 @@ export default function Menu() {
         })
     }
 
+    function updateItem(id) {
+        // Function implementation;
+        console.log(id);
+    }
+
     const onSubmit = (e, menuItem) => {
         e.preventDefault();
         MenuService.postMenu(menuItem).then(data => {
@@ -95,7 +100,7 @@ export default function Menu() {
                                     <h3 className="price">{menuI.price} Ft</h3>
                                     <div className="icon">
                                         <DeleteOutlineRoundedIcon type="button" fontSize="small" onClick={() => { deleteItem(menuI._id) }} />
-                                        <EditRoundedIcon fontSize="small" />
+                                        <EditRoundedIcon fontSize="small" type="button" onClick={() => { updateItem(menuI._id) }}/>
                                     </div>
                                 </div>
                                 <div className="item2">

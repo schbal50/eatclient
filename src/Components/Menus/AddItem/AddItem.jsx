@@ -3,7 +3,7 @@ import { Dialog } from '@material-ui/core';
 import "./AddItem.css"
 
 
-export default function AddItem({ disabled, onExit, onSave }) {
+export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
     const [menuItem, setMenuItem] = useState({
         name: "", description: "", price: "", categories: []
     })
@@ -20,6 +20,7 @@ export default function AddItem({ disabled, onExit, onSave }) {
     }
 
     useEffect(() => {
+        setMenuItem({name: selectedItem.name, description: selectedItem.description, price: selectedItem.price});
         if (disabled) {
             var modal = document.getElementById("myModal");
             modal.style.display = "flex";
@@ -32,6 +33,7 @@ export default function AddItem({ disabled, onExit, onSave }) {
     }, [disabled])
 
     const exitModalHandler = (e) => {
+        clearMenuItemState();
         e.preventDefault();
         onExit();
     }

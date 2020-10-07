@@ -2,8 +2,8 @@ import React from 'react';
 import Navbar from './Components/Navbar/Navbar'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './Components/Home'
-import Login from './Components/Login'
-import Register from './Components/Register'
+import Login from './Components/Login/Login'
+import Register from './Components/Register/Register'
 import Menus from './Components/Menus/Menus'
 import Admin from './Components/Admin'
 import PublicMenu from './Components/PublicMenu'

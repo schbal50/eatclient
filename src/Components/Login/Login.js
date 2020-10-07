@@ -50,7 +50,7 @@ const Login = props => {
                                     <label for="password">Password</label>
                                 </div>
 
-                                <button className="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+                                <button className="btn btn-lg btn-block" type="submit" Style="background-color:bisque; opacity:70%;">Log In</button>
                             </form>
                             {message ? <Message message={message} /> : null}
                         </div>

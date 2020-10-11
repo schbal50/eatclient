@@ -10,6 +10,7 @@ import PublicMenu from './Components/PublicMenu'
 import PrivateRoute from './hocs/PrivateRoute'
 import UnPrivateRoute from './hocs/UnPrivateRoute'
 import './App.css'
+import UserSettings from './Components/User/User';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <UnPrivateRoute path="/register" component={Register} />
       <PrivateRoute path="/menus" component={Menus} is_staff={[true, false]} />
       <PrivateRoute path="/admin" component={Admin} is_staff={[true]} />
+      <PrivateRoute path="/userSettings" component={UserSettings} is_staff={[true, false]} />
       <Route exact path="/publicmenu" component={PublicMenu} />
     </Router>
   );

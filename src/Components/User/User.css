@@ -1,0 +1,16 @@
+.card-container{
+    background-color:bisque;
+    opacity: 70%;
+    margin: 2%;
+    padding: 1%;
+    border-radius: 15px;
+}
+
+.user-container{
+}
+
+.button-container{
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+}

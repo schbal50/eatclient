@@ -87,6 +87,11 @@ const Navbar = props => {
                         Logout
                     </li>
                 </Link>
+                <Link to="/userSettings">
+                    <li>
+                        User Settings
+                    </li>
+                </Link>
             </>
         )
     }

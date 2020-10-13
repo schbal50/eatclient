@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../../Services/AuthService';
 import { AuthContext } from '../../Context/AuthContext';
-import leves from '../../pics/leves.jpg';
 import logo from '../../pics/logo.png';
 import './Navbar.css'
 

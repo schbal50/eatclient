@@ -24,9 +24,8 @@ export default function Menu() {
         MenuService.getMenus().then(data => {
             setMenus(data.menu)
         })
-        const uid = authContext.user._id;
-        setUrl(`http://localhost:3000/publicmenu?id=${uid}`);
-        
+        // const uid = authContext.user.username;
+        // setUrl(`http://localhost:3000/publicmenu?id=${uid}`);
     }, [isAddModal]);
 
 const onAddHandler = () => {

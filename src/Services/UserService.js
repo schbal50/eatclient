@@ -20,5 +20,16 @@ export default {
             }
             else return { message: { msgBody: "UnAuthorized" }, msgError: true };
         })
+    },
+    postLogo: (formdata) => {
+        return fetch(`/user/logo`, {
+            method: 'post',
+            body: formdata
+        })//.then(response =>{
+        //     if (response.status === 200) {
+        //         return response.json().then(data => data);
+        //     } 
+        //     else return { message: { msgBody: "Something went wrong "}, msgError: true };
+        // })
     }
 }

@@ -41,14 +41,14 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
 
   function getUrl(picture) {
     if (picture) {
-        var arrayBufferView = new Uint8Array( picture.data );
-        var blob = new Blob( [ arrayBufferView ], { type: "image/png" } );
-        var urlCreator = window.URL || window.webkitURL;
-        var imageUrl = urlCreator.createObjectURL( blob );
-        return imageUrl;
+      var arrayBufferView = new Uint8Array(picture.data);
+      var blob = new Blob([arrayBufferView], { type: "image/png" });
+      var urlCreator = window.URL || window.webkitURL;
+      var imageUrl = urlCreator.createObjectURL(blob);
+      return imageUrl;
     }
     return "https://speedtest.unitymedia.de/img/icons/upload.svg";
-}
+  }
 
   const exitModalHandler = (e) => {
     clearMenuItemState();
@@ -81,7 +81,7 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
       categories: [],
     });
   };
-  
+
 
   return (
     <div id="myModal" className="modal">
@@ -122,23 +122,6 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
           >
             Description
           </textarea>
-          <div className="buttonContainer">
-            <button type="submit" form="useForm">
-              Submit
-            </button>
-            <button type="button" form="useForm" onClick={exitModalHandler}>
-              X
-            </button>
-          </div>
-        </div>
-        <div className="form-container-2">
-
-          <img
-            src={getUrl(menuItem.picture)}
-            className="sizedImage"
-            alt="Responsive image"
-            type="button"
-          />
 
           <div className="custom-file">
             <input
@@ -150,7 +133,25 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
               onChange={imageHandler}
             />
           </div>
-          
+
+          <div className="buttonContainer">
+            <button type="submit" form="useForm">
+              Submit
+            </button>
+            <button type="button" form="useForm" onClick={exitModalHandler}>
+              X
+            </button>
+          </div>
+        </div>
+        <div className="form-container-2">
+
+          {/* <img
+            src={getUrl(menuItem.picture)}
+            className="sizedImage"
+            alt="Responsive image"
+            type="button"
+          /> */}
+
         </div>
       </div>
     </div>

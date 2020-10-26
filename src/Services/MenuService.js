@@ -36,13 +36,10 @@ export default {
             else return { message: { msgBody: "UnAuthorized" }, msgError: true };
         })
     },
-    updateMenuItemById: (id, menuItem) => {
+    updateMenuItemById: (id, formdata) => {
         return fetch(`/user/updateItem/${id}`, {
             method: "PATCH",
-            body: JSON.stringify(menuItem),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: formdata
         }).then(response => {
             if (response.status !== 401) {
                 return response.json().then(data => data);

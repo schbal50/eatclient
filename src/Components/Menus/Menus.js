@@ -68,7 +68,7 @@ const onUpdate = (e, menuItem) =>{
     console.log(menuItem);
     setSelectedMenu(x => (x.name = menuItem.name, x.price = menuItem.price, x.description = menuItem.description));
     console.log(selectedMenu);
-    MenuService.updateMenuItemById(selectedMenu._id, selectedMenu).then(data => {
+    MenuService.updateMenuItemById(selectedMenu._id, menuItem).then(data => {
         const { message } = data;
         //resetForm();
         if (!message.msgError) {

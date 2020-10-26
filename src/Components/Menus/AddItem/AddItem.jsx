@@ -10,7 +10,7 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
     categories: [],
   });
   const [formData, setFormData] = useState();
-
+  const [preview, setPreview] = useState();
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -150,6 +150,7 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
               onChange={imageHandler}
             />
           </div>
+
           
         </div>
       </div>

@@ -88,9 +88,9 @@ const onUpdate = (e, menuItem) =>{
     });
 }
 
-const onSubmit = (e, menuItem) => {
+const onSubmit = (e, formData) => {
     e.preventDefault();
-    MenuService.postMenu(menuItem).then(data => {
+    MenuService.postMenu(formData).then(data => {
         const { message } = data;
         //resetForm();
         if (!message.msgError) {
@@ -108,6 +108,17 @@ const onSubmit = (e, menuItem) => {
             setMessage(message); // Ez error message lesz
         }
     })
+}
+
+function getUrl(picture) {
+    if (picture) {
+        var arrayBufferView = new Uint8Array( picture.data );
+        var blob = new Blob( [ arrayBufferView ], { type: "image/png" } );
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL( blob );
+        return imageUrl;
+    }
+    return leves;
 }
 
 var modal = document.getElementById("myModal");
@@ -136,8 +147,7 @@ return (
                                 </div>
                             </div>
                             <div className="item2">
-                                <img src={leves} className="sizedImage" alt="Responsive image" />
-                                {/* <img src={leves} className="sizedImage"></img> */}
+                                <img src={getUrl(menuI.picture)} className="sizedImage" alt="Responsive image" />
                             </div>
                         </li>
                     </div>

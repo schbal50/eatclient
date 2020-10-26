@@ -7,13 +7,10 @@ export default {
             else return { message: { msgBody: "UnAuthorized" }, msgError: true };
         })
     },
-    postMenu: menuItem => {
+    postMenu: formdata => {
         return fetch('/user/menuItem', {
-            method: "POST",
-            body: JSON.stringify(menuItem),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            method: 'post',
+            body: formdata
         }).then(response => {
             if (response.status !== 401) {
                 return response.json().then(data => data);
@@ -51,6 +48,12 @@ export default {
                 return response.json().then(data => data);
             }
             else return { message: { msgBody: "UnAuthorized" }, msgError: true };
+        })
+    },
+    updateMenuPictureById: (id, formdata) => {
+        return fetch(`/user/updateItemPicture/${id}`, {
+            method: "POST",
+            body: formdata
         })
     }
 }

@@ -7,6 +7,11 @@
   justify-content: center;
 }
 
+.item2 {
+  max-height: 25vh;
+  min-height: 25vh;
+}
+
 .paginator-insideContainer{
   display: flex;
   flex: 6;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Dialog } from "@material-ui/core";
+import AvatarEditor from 'react-avatar-editor'
 import "./AddItem.css";
 
 export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
@@ -8,9 +9,29 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
     description: "",
     price: "",
     categories: [],
+    picture: null,
   });
   const [formData, setFormData] = useState();
   const [preview, setPreview] = useState();
+
+  useEffect(() => {
+    setFormData(new FormData());
+    setMenuItem({
+      name: selectedItem.name,
+      description: selectedItem.description,
+      price: selectedItem.price,
+      picture: selectedItem.picture,
+    });
+    getUrl(selectedItem.picture);
+    if (disabled) {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "flex";
+    } else {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+  }, [disabled]);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -22,32 +43,16 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
     });
   };
 
-  useEffect(() => {
-    setFormData(new FormData());
-    setMenuItem({
-      name: selectedItem.name,
-      description: selectedItem.description,
-      price: selectedItem.price,
-      picture: selectedItem.picture
-    });
-    if (disabled) {
-      var modal = document.getElementById("myModal");
-      modal.style.display = "flex";
-    } else {
-      var modal = document.getElementById("myModal");
-      modal.style.display = "none";
-    }
-  }, [disabled]);
-
   function getUrl(picture) {
     if (picture) {
       var arrayBufferView = new Uint8Array(picture.data);
       var blob = new Blob([arrayBufferView], { type: "image/png" });
       var urlCreator = window.URL || window.webkitURL;
       var imageUrl = urlCreator.createObjectURL(blob);
-      return imageUrl;
+      setPreview(imageUrl);
+    } else {
+      setPreview("https://speedtest.unitymedia.de/img/icons/upload.svg");
     }
-    return "https://speedtest.unitymedia.de/img/icons/upload.svg";
   }
 
   const exitModalHandler = (e) => {
@@ -59,6 +64,7 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
   const imageHandler = (e) => {
     e.preventDefault();
     formData.append("picture", e.target.files[0]);
+    setPreview(URL.createObjectURL(e.target.files[0]));
   };
 
   const onSubmitModal = (e) => {
@@ -81,7 +87,6 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
       categories: [],
     });
   };
-
 
   return (
     <div id="myModal" className="modal">
@@ -123,17 +128,6 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
             Description
           </textarea>
 
-          <div className="custom-file">
-            <input
-              enctype="multipart/form-data"
-              type="file"
-              name="profile-logo"
-              id="input"
-              accept="image/*"
-              onChange={imageHandler}
-            />
-          </div>
-
           <div className="buttonContainer">
             <button type="submit" form="useForm">
               Submit
@@ -143,14 +137,26 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
             </button>
           </div>
         </div>
-        <div className="form-container-2">
 
-        <img
-            src={getUrl(menuItem.picture)}
+        
+        <AvatarEditor
+          image={preview}
+          width={250}
+          height={250}
+          border={50}
+          color={[255, 255, 255, 0.6]} // RGBA
+          scale={1.2}
+          rotate={0}
+         />
+
+
+        <div className="form-container-2">
+          {/* <img
+            src={preview}
             className="sizedImage"
             alt="Responsive image"
             type="button"
-          /> 
+          /> */}
 
           <div className="custom-file">
             <input
@@ -162,9 +168,9 @@ export default function AddItem({ disabled, onExit, onSave, selectedItem }) {
               onChange={imageHandler}
             />
           </div>
-
-          
         </div>
+
+
       </div>
     </div>
   );

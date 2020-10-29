@@ -12,7 +12,7 @@ import "./Menus.css"
 
 export default function Menu() {
     const [menuItem, setMenu] = useState({ name: "", description: "", price: "" })
-    const [selectedMenu, setSelectedMenu] = useState({ name: "", description: "", price: "" })
+    const [selectedMenu, setSelectedMenu] = useState({ name: "", description: "", price: "", picture: "" })
     const [menu, setMenus] = useState([]);
     const authContext = useContext(AuthContext);
     const [isAddModal, setIsAddModal] = useState(false);
@@ -30,7 +30,7 @@ export default function Menu() {
 
 const onAddHandler = () => {
     setSelectedMenu({
-        name: "", description: "", price: ""
+        name: "", description: "", price: "", picture: ""
     });
     setIsAddModal(!isAddModal);
     setToCreate(true);
@@ -65,9 +65,7 @@ function updateItem(id) {
 
 const onUpdate = (e, menuItem) =>{
     e.preventDefault();
-    console.log(menuItem);
-    setSelectedMenu(x => (x.name = menuItem.name, x.price = menuItem.price, x.description = menuItem.description));
-    console.log(selectedMenu);
+    setSelectedMenu(x => (x.name = menuItem.name, x.price = menuItem.price, x.description = menuItem.description, x.picture = menuItem.picture));
     MenuService.updateMenuItemById(selectedMenu._id, menuItem).then(data => {
         const { message } = data;
         //resetForm();

@@ -7,12 +7,19 @@
   justify-content: center;
 }
 
+.picture-container{
+  display: flex;
+  flex: 1;
+}
+
 .item2 {
   max-height: 25vh;
   min-height: 25vh;
+  max-width: 100%;
+  min-width: 30vh;
 }
 
-.paginator-insideContainer{
+.paginator-insideContainer {
   display: flex;
   flex: 6;
   flex-direction: column;
@@ -25,7 +32,7 @@
 }
 
 .menus-list {
-
+  overflow: hidden;
 }
 
 .menus-list li {
@@ -68,7 +75,7 @@
 .menus-list li .item2 {
   position: relative;
   flex: 2;
-  
+
   border-radius: 9px;
   justify-content: center;
   margin: 6px;
@@ -131,7 +138,7 @@
 div.icon {
   display: inline;
   position: absolute;
-  
+
   bottom: 0;
   left: 0;
 }
@@ -145,88 +152,107 @@ div.icon {
   border-radius: 10px;
 }
 
-@media screen and (max-width:900px){
+@media screen and (max-width:900px) {
   .menus-list li {
-      display: flex;
-      list-style: none;
-      background: #fff;
-      border-radius: 7px;
-      box-shadow: 0 2px 5px #ccc;
-      padding: 10px;
-      width: 40%;
-      margin: 16px;
-      min-height: 175px;
-      
-      float: left;
+    display: flex;
+    list-style: none;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 40%;
+    margin: 16px;
+    min-height: 175px;
+
+    float: left;
   }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1024px) {
   body {
-      padding: 0;
-      margin: 0;
+    padding: 0;
+    margin: 0;
   }
 
-  .paginator-insideContainer{
-      padding: 0px;
+  .paginator-insideContainer {
+    padding: 0px;
   }
 
   .menus-container {
-      padding: 0;
-      margin: 0;
+    margin-left: 0.2%;
+    margin-right: 0.2%;
+    align-items: center;
   }
-  
+
   .menus-list {
-      padding: 0;
-      margin: 0;
+    padding: 0;
+    margin: 0;
   }
 
   .menus-list li {
-      display: flex;
-      list-style: none;
-      background: #fff;
-      border-radius: 7px;
-      box-shadow: 0 2px 5px #ccc;
-      padding: 10px;
-      width: 90%;
-      min-height: 150px;
-      float: left;
+    height: 45vh;
+    width: 91%;
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   #addList {
-      display: flex;
-      left: 0vh;
-      flex: 1;
-      position: sticky;
-      justify-self: center;
-      justify-content: center;
-      list-style: none;
-      background: #fff;
-      box-shadow: 0 2px 5px #ccc;
-      padding: 10px;
-      width: 20%;
-      margin: 16px;
-      min-height: 175px;
-      opacity: 60%;
-      border-radius: 50px;
-      min-height: 50px;
-      right: 0%;
+    display: flex;
+    left: 0vh;
+    flex: 1;
+    position: sticky;
+    justify-self: center;
+    justify-content: center;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 20%;
+    margin: 16px;
+    min-height: 175px;
+    opacity: 60%;
+    border-radius: 50px;
+    min-height: 50px;
+    right: 0%;
   }
 
-  .menus-list li .item2 {
-      position: relative;
-      flex: 2;
-      
-      border-radius: 9px;
-      margin: 6px;
+  .menus-list li .item2{
+    display: flex;
+    position: relative;
+    flex: 2;
+
+    border-radius: 9px;
   }
 
-  .sizedImage {
-      position: relative;
-      top: 0;
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      border-radius: 5px;
+  /*.sizedImage {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+  }*/
+
+  .picture-container{
+    display: flex;
+    flex: 1;
+  }
+
+  .item2 {
+    position: relative;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }

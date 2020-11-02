@@ -81,14 +81,14 @@ const Navbar = props => {
                             </li>
                         </Link> : null
                 }
-                <Link to="/login">
-                    <li onClick={onClickLogoutHandler}>
-                        Logout
-                    </li>
-                </Link>
                 <Link to="/userSettings">
                     <li>
                         User Settings
+                    </li>
+                </Link>
+                <Link to="/login">
+                    <li onClick={onClickLogoutHandler}>
+                        Logout
                     </li>
                 </Link>
             </>
